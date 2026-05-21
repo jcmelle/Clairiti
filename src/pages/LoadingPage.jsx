@@ -45,7 +45,7 @@ export default function LoadingPage() {
       } catch (err) {
         console.error('network error:', err)
         navigate('/results', {
-          state: { error: 'Could not reach the server. Make sure it is running on port 3001.' }
+          state: { error: 'Could not reach the server. Please try again in a moment.' }
         })
       }
     }
