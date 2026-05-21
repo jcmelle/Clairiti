@@ -14,19 +14,8 @@ dotenv.config({ path: join(__dirname, '.env') })
 const app = express()
 const PORT = process.env.PORT || 3001
 
-// allowing both local dev and the deployed vercel frontend
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://clairiti.vercel.app', // update this if vercel gives you a different url
-]
-
-app.use(cors({
-  origin: (origin, callback) => {
-    // allow requests with no origin (like curl or postman)
-    if (!origin || allowedOrigins.includes(origin)) callback(null, true)
-    else callback(new Error('not allowed by cors'))
-  }
-}))
+// open cors for all origins — fine for a portfolio project
+app.use(cors())
 app.use(express.json())
 
 // multer handles the image uploads and keeps them in memory (no saving to disk)
