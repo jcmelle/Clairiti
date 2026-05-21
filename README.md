@@ -4,6 +4,8 @@ an ai-powered ui accessibility reviewer. upload a screenshot of your interface a
 
 built as a portfolio project using react, node/express, and the openrouter api.
 
+🔗 **[live demo → clairiti-five.vercel.app](https://clairiti-five.vercel.app)**
+
 ---
 
 ## what it does
@@ -14,26 +16,7 @@ built as a portfolio project using react, node/express, and the openrouter api.
 
 ---
 
-## deployment
-
-the frontend is deployed on vercel and the backend on render.
-
-**backend (render):**
-1. go to render.com → new web service → connect this repo
-2. set root directory to `server`
-3. build command: `npm install`
-4. start command: `node index.js`
-5. add environment variable: `OPENROUTER_API_KEY` = your key
-6. deploy — you'll get a url like `https://clairiti-api.onrender.com`
-
-**frontend (vercel):**
-1. go to vercel.com → new project → import this repo
-2. add environment variable: `VITE_API_URL` = your render url (e.g. `https://clairiti-api.onrender.com`)
-3. deploy — done!
-
----
-
-
+## tech stack
 
 **frontend:** react, vite, tailwind css, react router
 
@@ -41,7 +24,7 @@ the frontend is deployed on vercel and the backend on render.
 
 ---
 
-## setup
+## local setup
 
 ### 1. install frontend dependencies
 ```bash
@@ -80,6 +63,25 @@ then open http://localhost:5173
 
 ---
 
+## deployment
+
+the frontend is deployed on vercel and the backend on render.
+
+**backend (render):**
+1. go to render.com → new web service → connect this repo
+2. set root directory to `server`
+3. build command: `npm install`
+4. start command: `node index.js`
+5. add environment variable: `OPENROUTER_API_KEY` = your key
+6. deploy
+
+**frontend (vercel):**
+1. go to vercel.com → new project → import this repo
+2. add environment variable: `VITE_API_URL` = your render url
+3. deploy
+
+---
+
 ## fonts
 
 this project uses **made bon voyage** for headings and **lora** for body text.
@@ -103,6 +105,10 @@ src/
 └── index.css             ← all global styles and gradients
 
 server/
+├── index.js              ← express server + openrouter api calls
+├── .env                  ← your api key (never commit this)
+└── package.json
+```
 ├── index.js              ← express server + openrouter api calls
 ├── .env                  ← your api key (never commit this)
 └── package.json
