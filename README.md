@@ -29,28 +29,3 @@ built as a portfolio project using react, node/express, and the openrouter api.
 this project uses **made bon voyage** for headings and **lora** for body text.
 
 bon voyage is for personal use only 
-
-
----
-
-## project structure
-
-```
-src/
-├── assets/fonts/         ← bon voyage font files
-├── components/           ← reusable ui pieces
-├── data/mockReport.js    ← fallback data if the api fails
-├── pages/                ← one file per page
-├── App.jsx               ← routes
-├── main.jsx              ← entry point
-└── index.css             ← all global styles and gradients
-
-server/
-├── index.js              ← express server + openrouter api calls
-├── .env                  ← your api key (never commit this)
-└── package.json
-```
-├── index.js              ← express server + openrouter api calls
-├── .env                  ← your api key (never commit this)
-└── package.json
-```
