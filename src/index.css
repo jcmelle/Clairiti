@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FONTS
+   BonVoyage  → headings, logo, big buttons (.serif class)
+   Lora       → all body text, labels, small text, inputs
+   ============================================================ */
+
+@font-face {
+  font-family: 'BonVoyage';
+  src: url('./assets/fonts/MADE_Bon_Voyage_Regular_PERSONAL_USE.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BonVoyage';
+  src: url('./assets/fonts/MADE_Bon_Voyage_Thin_PERSONAL_USE.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: 'BonVoyage', Georgia, serif;
+  --font-body:    'Lora', Georgia, serif;
+  --font-serif:   var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* BonVoyage — logos, page headings, score number */
+.serif {
+  font-family: var(--font-display);
+}
+
+/* ============================================================
+   GRADIENT BACKGROUNDS — one per page
+   ============================================================ */
+.grad-landing {
+  background:
+    radial-gradient(ellipse at 18% 55%, #c8b8f8 0%, transparent 48%),
+    radial-gradient(ellipse at 78% 18%, #b8d8f8 0%, transparent 44%),
+    radial-gradient(ellipse at 62% 82%, #f8c8e8 0%, transparent 44%),
+    radial-gradient(ellipse at 38% 28%, #d8f0e8 0%, transparent 40%),
+    #f0e8ff;
+}
+
+.grad-choice {
+  background:
+    radial-gradient(ellipse at 28% 62%, #c8b8f8 0%, transparent 50%),
+    radial-gradient(ellipse at 72% 28%, #e8c8f8 0%, transparent 44%),
+    radial-gradient(ellipse at 50% 78%, #b8d0f8 0%, transparent 44%),
+    #ece8ff;
+}
+
+.grad-upload {
+  background:
+    radial-gradient(ellipse at 24% 52%, #c8d8f8 0%, transparent 50%),
+    radial-gradient(ellipse at 76% 28%, #d8c8f8 0%, transparent 44%),
+    radial-gradient(ellipse at 55% 76%, #c8f0e8 0%, transparent 44%),
+    #e0eeff;
+}
+
+.grad-describe {
+  background:
+    radial-gradient(ellipse at 28% 42%, #d8f0d8 0%, transparent 50%),
+    radial-gradient(ellipse at 72% 62%, #c8e8f8 0%, transparent 44%),
+    radial-gradient(ellipse at 50% 18%, #f0e8c8 0%, transparent 40%),
+    #e8f4ee;
+}
+
+.grad-loading {
+  background:
+    radial-gradient(ellipse at 28% 52%, #f8c8d8 0%, transparent 50%),
+    radial-gradient(ellipse at 72% 28%, #f8d8b8 0%, transparent 44%),
+    radial-gradient(ellipse at 50% 76%, #d8c8f8 0%, transparent 44%),
+    #f8e8e0;
+}
+
+.grad-results {
+  background:
+    radial-gradient(ellipse at 24% 42%, #c8c8f8 0%, transparent 50%),
+    radial-gradient(ellipse at 76% 62%, #d8c8f8 0%, transparent 44%),
+    radial-gradient(ellipse at 50% 18%, #c8e0f8 0%, transparent 44%),
+    #ddd8f8;
+}
+
+/* ============================================================
+   DECORATIVE CORNER LINES
+   ============================================================ */
+.corner-tl {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 56px;
+  height: 56px;
+  border-top: 1.5px solid #222;
+  border-left: 1.5px solid #222;
+  pointer-events: none;
+}
+
+.corner-br {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  width: 56px;
+  height: 56px;
+  border-bottom: 1.5px solid #222;
+  border-right: 1.5px solid #222;
+  pointer-events: none;
+}
+
+/* ============================================================
+   PILL BUTTONS
+   ============================================================ */
+
+/* Solid black pill — "Get Review" */
+.btn-pill-solid {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 14px 52px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s, transform 0.1s;
+  line-height: 1;
+}
+.btn-pill-solid:hover  { background: #2a2a2a; }
+.btn-pill-solid:active { transform: scale(0.97); }
+
+/* Outlined pill — "Submit" */
+.btn-pill-outline {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.55);
+  color: #222;
+  border: 1px solid #bbb;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  padding: 11px 36px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  backdrop-filter: blur(4px);
+  line-height: 1;
+}
+.btn-pill-outline:hover  { background: rgba(255, 255, 255, 0.82); }
+.btn-pill-outline:active { transform: scale(0.97); }
+
+/* Small pill — "Choose file" */
+.btn-pill-sm {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 9px 28px;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.btn-pill-sm:hover { background: #333; }
+
+/* ============================================================
+   GLASSMORPHIC PAGE CARD
+   ============================================================ */
+.page-card {
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 36px 32px 32px;
+  width: 100%;
+  max-width: 560px;
+}
+
+/* ============================================================
+   UPLOAD BOX
+   ============================================================ */
+.upload-box {
+  position: relative;
+  border: 1px solid rgba(170, 160, 210, 0.5);
+  border-radius: 16px;
+  padding: 38px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.upload-box:hover     { background: rgba(255, 255, 255, 0.48); }
+.upload-box.drag-over {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: #999;
+}
+
+/* ============================================================
+   STYLED TEXTAREA
+   ============================================================ */
+.styled-textarea {
+  width: 100%;
+  border: 1px solid rgba(170, 160, 210, 0.5);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.38);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #333;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  line-height: 1.65;
+}
+.styled-textarea:focus        { border-color: rgba(130, 100, 200, 0.6); }
+.styled-textarea::placeholder { color: #aaa; font-style: italic; }
+
+/* ============================================================
+   SPARKLE DIVIDER
+   ============================================================ */
+.sparkle-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.sparkle-divider .sd-line {
+  height: 1px;
+  background: #555;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SEVERITY BADGES
+   ============================================================ */
+.badge-high   { background: rgba(255,120,100,0.18); color: #8a2000; border: 1px solid rgba(200,80,50,0.2);  }
+.badge-medium { background: rgba(255,200, 80,0.22); color: #7a5800; border: 1px solid rgba(200,150,0,0.22); }
+.badge-low    { background: rgba( 80,200,140,0.20); color: #185038; border: 1px solid rgba(50,150,80,0.22); }
+
+/* ============================================================
+   LOADING PULSE
+   ============================================================ */
+@keyframes fadePulse {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.45; }
+}
+.loading-pulse {
+  animation: fadePulse 2.2s ease-in-out infinite;
+}

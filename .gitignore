@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+server/node_modules/
+
+# env files — never commit these
+.env
+server/.env
+
+# vite build output
+dist/
+
+# os stuff
+.DS_Store
+Thumbs.db
