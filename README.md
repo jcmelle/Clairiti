@@ -86,9 +86,8 @@ the frontend is deployed on vercel and the backend on render.
 
 this project uses **made bon voyage** for headings and **lora** for body text.
 
-bon voyage is for personal use only — if you plan to deploy this publicly, grab a commercial license at madetype.com first.
+bon voyage is for personal use only 
 
-to swap the font, update `src/index.css` — the @font-face blocks and the `--font-display` variable are all at the top of that file.
 
 ---
 
