@@ -14,7 +14,26 @@ built as a portfolio project using react, node/express, and the openrouter api.
 
 ---
 
-## tech stack
+## deployment
+
+the frontend is deployed on vercel and the backend on render.
+
+**backend (render):**
+1. go to render.com → new web service → connect this repo
+2. set root directory to `server`
+3. build command: `npm install`
+4. start command: `node index.js`
+5. add environment variable: `OPENROUTER_API_KEY` = your key
+6. deploy — you'll get a url like `https://clairiti-api.onrender.com`
+
+**frontend (vercel):**
+1. go to vercel.com → new project → import this repo
+2. add environment variable: `VITE_API_URL` = your render url (e.g. `https://clairiti-api.onrender.com`)
+3. deploy — done!
+
+---
+
+
 
 **frontend:** react, vite, tailwind css, react router
 

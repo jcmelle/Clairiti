@@ -4,7 +4,8 @@ import GradientPageLayout from '../components/GradientPageLayout.jsx'
 import BackButton from '../components/BackButton.jsx'
 import SparkleDivider from '../components/SparkleDivider.jsx'
 
-const API_URL = 'http://localhost:3001/api/review'
+// uses the env variable in production, falls back to localhost for local dev
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 export default function LoadingPage() {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ export default function LoadingPage() {
         files.forEach(file => formData.append('screenshots', file))
         formData.append('context', context || '')
 
-        const response = await fetch(API_URL, {
+        const response = await fetch(`${API_URL}/api/review`, {
           method: 'POST',
           body: formData,
         })

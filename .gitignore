@@ -4,6 +4,7 @@ server/node_modules/
 
 # env files — never commit these
 .env
+.env.local
 server/.env
 
 # vite build output
