@@ -129,7 +129,7 @@ app.post('/api/review', upload.array('screenshots', 10), async (req, res) => {
       headers: {
         'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'http://localhost:5173',
+        'HTTP-Referer': 'https://clairiti-five.vercel.app',
         'X-Title': 'Clairiti',
       },
       body: JSON.stringify({
@@ -190,7 +190,7 @@ app.get('/api/test', async (req, res) => {
       headers: {
         'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'http://localhost:5173',
+        'HTTP-Referer': 'https://clairiti-five.vercel.app',
         'X-Title': 'Clairiti',
       },
       body: JSON.stringify({
